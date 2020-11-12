@@ -7,7 +7,7 @@ module.exports = function () {
         },
     });
 
-    server.listen(3000);
+    server.listen(80);
 
     return io;
 }
