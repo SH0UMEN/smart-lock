@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>hello/world</h1>
+    <button id="action">Нажми</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.min.js" integrity="sha512-gVG6WRMUYFaIdoocaxbqd02p3DUbhReTBWc7NTGB96i7vONrr7GuCZJHFFmkXEhpwilIWUnfRIMSlKaApwd/jg==" crossorigin="anonymous"></script>
+    <script>
+        let sock = io('http://localhost:3000');
+        let button = document.querySelector('#action');
+        button.addEventListener('click', (e) => {
+            sock.emit('event', { one: 'eat the shit' });
+        });
+
+        sock.on('event', (data) => {
+            console.log(data);
+        })
+
+    </script>
+</body>
+</html>
