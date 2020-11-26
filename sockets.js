@@ -8,6 +8,7 @@ module.exports = function () {
     });
 
     server.listen(process.env.PORT);
+    console.log(process.env.PORT);
 
     return io;
 }
